@@ -12,9 +12,16 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 SUPPORT=/dls_sw/prod/R3.14.8.2/support
 WORK=/dls_sw/work/R3.14.8.2/support
 
-# External module definitions (prod release).
+# If you don't want to install into $(TOP) then
+# define INSTALL_LOCATION_APP here
+#INSTALL_LOCATION_APP=<fullpathname>
+
+OXCS700=/home/tmc43/R3.14.8.2/support/OXCS700
+ASYN=	$(WORK)/asyn
 STREAM=	$(WORK)/streamDevice
-ASYN= $(WORK)/asyn
+
+#If using the sequencer, uncomment this line:
+#SNCSEQ=/home/diamond/R3.14.7/prod/support/seq/2-0-10
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE=/dls_sw/epics/R3.14.8.2/base

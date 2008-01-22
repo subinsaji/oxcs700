@@ -1,0 +1,5 @@
+file OXCS700.template
+{
+pattern { P      , Q , PORT    }
+        { OXCS700, "", OXCS700p }
+}

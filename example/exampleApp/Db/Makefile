@@ -8,10 +8,10 @@ include $(TOP)/configure/CONFIG
 #DB_OPT = YES
 
 #----------------------------------------------------
-# In a Diamond Support Module, install
-# templates like this
+# In a Diamond IOC Application, build db files from
+# template files like this
 #
-DB += OXCS700.template
+DB += example.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

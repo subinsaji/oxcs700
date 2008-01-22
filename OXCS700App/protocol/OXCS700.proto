@@ -1,0 +1,59 @@
+Terminator = "";
+ReadTimeout = 100;
+PollPeriod = 100;
+ReplyTimeout = 2000;
+MaxInput = 32;
+
+# read status input
+# 32 byte packet:
+# 0: unsigned char Length = always 32, ignored
+# 1: unsigned char Type
+# 2,3: unsigned short GasSetPoint (centi-Kelvin)
+# 4,5: unsigned short GasTemp (centi-Kelvin)
+# 6,7: signed short GasError (centi-Kelvin)
+# 8: unsigned char Runmode (enum, values 0..6)
+# 9: unsigned char PhaseID (enum, values 0..10)
+# 10,11: unsigned short RampRate (centi-Kelvin/s)
+# 12,13: unsigned short TargetTemp (centi-Kelvin)
+# 14,15: unsigned short EvapTemp (centi-Kelvin)
+# 16,17: unsigned short SuctTemp (centi-Kelvin)
+# 18,19: unsigned short TimeRemaining (minutes)
+# 20: unsigned char GasFlow (deci-litres/min)
+# 21: unsigned char GasHeat (%)
+# 22: unsigned char EvapHeat (%)
+# 23: unsigned char SuctHeat (%)
+# 24: unsigned char LinePressure (centi-bar)
+# 25: unsigned char Alarm (enum, values 0..16)
+# 26,27: unsigned short RunTime (minutes)
+# 28,29: unsigned short ControllerNumber
+# 30: unsigned char SoftwareVersion
+# 31: unsigned char EvapAdjust
+read { in "%1c%(\$1:TYPE.RVAL)r%(\$1:GASSETPOINT.RVAL)2r"
+          "%(\$1:GASTEMP.RVAL)2r%(\$1:GASERROR.RVAL)2r"
+          "%(\$1:RUNMODE.RVAL)r%(\$1:PHASE.RVAL)r%(\$1:RAMPRATE.RVAL)2r"
+          "%(\$1:TARGETTEMP.RVAL)2r%(\$1:EVAPTEMP.RVAL)2r"
+          "%(\$1:SUCTTEMP.RVAL)2r%(\$1:REMAINING.RVAL)2r%(\$1:GASFLOW.RVAL)r"
+          "%(\$1:GASHEAT.RVAL)r%(\$1:EVAPHEAT.RVAL)r%(\$1:SUCTHEAT.RVAL)r"
+          "%(\$1:BACKPRESS.RVAL)r%(\$1:ALARM.RVAL)r%(\$1:RUNTIME.RVAL)2r"
+          "%(\$1:CTRLNUM.RVAL)2r%(\$1:VER.RVAL)r%(\$1:EVAPADJUST.RVAL)r"; }
+
+# structure of valid command packet is
+# char size of packet
+# char type of packet
+# char *params, list of params
+
+restart { out "\x02\x0a"; }
+ramp    { out "\x06\x0b%(\$1:RRATE.RVAL)2r%(\$1:RTEMP.RVAL)2r"; }
+plat    { out "\x04\x0c%(\$1:PTIME.RVAL)2r"; }
+hold    { out "\x02\x0d"; }
+cool    { out "\x04\x0e%(\$1:CTEMP.RVAL)2r"; }
+end     { out "\x04\x0f%(\$1:ERATE.RVAL)2r"; }
+purge   { out "\x02\x10"; }
+pause   { out "\x02\x11"; }
+resume  { out "\x02\x12"; }
+stop    { out "\x02\x13"; }
+turbo   { out "\x03\x14%(\$1:TURBO.RVAL)r"; }
+
+
+
+

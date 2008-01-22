@@ -6,13 +6,16 @@ include $(TOP)/configure/CONFIG
 # Build an Diamond Support Module
 # -------------------------------
 
-#LIBRARY_IOC += xxx
+#LIBRARY_IOC += OXCS700
 
 # xxxRecord.h will be created from xxxRecord.dbd
 #DBDINC += xxx.h
 
 # xxxRecord.dbd will be installed into <top>/dbd
-#DBD += xxx.dbd
+DBD += OXCS700vdct.dbd
+OXCS700vdct_DBD += base.dbd
+OXCS700vdct_DBD += stream.dbd
+OXCS700vdct_DBD += asyn.dbd
 
 # The following are compiled and added to the support library
 #xxx_SRCS += xxxCodeA.c
@@ -20,68 +23,5 @@ include $(TOP)/configure/CONFIG
 
 # We need to link against the EPICS Base libraries
 #xxx_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-
-# ------------------------
-# Build an IOC Application
-# ------------------------
-
-PROD_IOC = OXCS700
-
-# OXCS700.dbd will be installed into <top>/dbd
-DBD += OXCS700.dbd
-
-# OXCS700.dbd will be created from these files
-OXCS700_DBD += base.dbd
-#OXCS700_DBD += xxx.dbd
-
-# OXCS700_registerRecordDeviceDriver.cpp will be created
-# OXCS700.dbd
-OXCS700_SRCS += OXCS700_registerRecordDeviceDriver.cpp
-
-# These two lines are needed for non-vxWorks builds, such as Linux
-OXCS700_SRCS_DEFAULT += OXCS700Main.cpp
-OXCS700_SRCS_vxWorks += -nil-
-
-# Add locally compiled object code
-#OXCS700_SRCS +=
-
-# The following adds object code from base/src/vxWorks
-OXCS700_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
-
-# This line says that this IOC Application depends on the
-# xxx Support Module
-#OXCS700_LIBS += xxx
-
-# We need to link this IOC Application against the EPICS Base libraries
-OXCS700_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-# ---------------------------------------------------
-
-# NOTE: To build SNL programs, SNCSEQ must be defined
-# in the <top>/configure/RELEASE file
-#
-# The difference between a file with an "st" extension
-# and one with an "stt" extension is:
-# The "st" extension files get passed through the C preprocessor
-# whereas the "stt" files do not.
-
-#ifneq ($(SNCSEQ),)
-    # This builds sncExample as a component of OXCS700
-#    OXCS700_SNCFLAGS += +r
-#    OXCS700_DBD      += sncExample.dbd
-#    OXCS700_SRCS     += sncExample.stt
-#    OXCS700_LIBS     += seq pv
-
-    # The following builds sncExample as a standalone application
-#    PROD_HOST           += sncExample
-#    sncExample_SNCFLAGS += +m
-#    sncExample_SRCS     += sncExample.stt
-#    sncExample_LIBS     += seq pv
-    # Here, we need to specify the dependency on EPICS Base libraries
-    # again because this is a standalone application and
-    # not part of OXCS700
-#    sncExample_LIBS     += $(EPICS_BASE_HOST_LIBS)
-#endif
 
 include $(TOP)/configure/RULES
