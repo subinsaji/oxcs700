@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 223
-y 82
-w 596
-h 691
+x 730
+y 385
+w 653
+h 697
 font "arial-medium-r-18.0"
 ctlFont "arial-medium-r-18.0"
 btnFont "arial-medium-r-18.0"
@@ -32,10 +32,25 @@ beginObjectProperties
 major 4
 minor 0
 release 0
+x 420
+y 50
+w 225
+h 605
+lineColor index 14
+fill
+fillColor index 5
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
 x 5
 y 50
-w 350
-h 635
+w 400
+h 640
 lineColor index 14
 fill
 fillColor index 5
@@ -49,7 +64,7 @@ minor 0
 release 0
 x 20
 y 0
-w 580
+w 630
 h 30
 
 beginGroup
@@ -62,7 +77,7 @@ minor 0
 release 0
 x 20
 y 0
-w 580
+w 630
 h 30
 lineColor index 3
 fill
@@ -77,15 +92,15 @@ minor 0
 release 1
 x 20
 y 3
-w 580
+w 630
 h 24
 lineColor index 11
 fillColor index 0
 numPoints 3
 xPoints {
   0 20
-  1 600
-  2 600
+  1 650
+  2 650
 }
 yPoints {
   0 27
@@ -102,7 +117,7 @@ minor 1
 release 0
 x 20
 y 3
-w 580
+w 630
 h 24
 font "arial-bold-r-16.0"
 fontAlign "center"
@@ -121,7 +136,7 @@ minor 0
 release 1
 x 20
 y 3
-w 580
+w 630
 h 24
 lineColor index 1
 fillColor index 0
@@ -129,7 +144,7 @@ numPoints 3
 xPoints {
   0 20
   1 20
-  2 600
+  2 650
 }
 yPoints {
   0 27
@@ -247,9 +262,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 55
-w 130
+x 210
+y 60
+w 190
 h 25
 controlPv "$(CS):TYPE"
 font "arial-bold-r-14.0"
@@ -264,29 +279,14 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 365
-y 50
-w 225
-h 605
-lineColor index 14
-fill
-fillColor index 5
-endObjectProperties
-
 # (Exit Button)
 object activeExitButtonClass
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 515
-y 660
+x 570
+y 665
 w 75
 h 25
 fgColor index 46
@@ -304,9 +304,9 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 60
-y 55
-w 115
+x 10
+y 60
+w 200
 h 25
 controlPv "$(CS):TYPE.DESC"
 fgColor index 14
@@ -323,11 +323,11 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 85
-w 130
+x 210
+y 90
+w 190
 h 25
-controlPv "$(CS):GASSETPOINT"
+controlPv "$(CS):SETPOINT"
 font "arial-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
@@ -347,133 +347,8 @@ major 10
 minor 0
 release 0
 x 10
-y 85
-w 210
-h 25
-controlPv "$(CS):GASSETPOINT.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 115
-w 130
-h 25
-controlPv "$(CS):GASTEMP"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 115
-w 210
-h 25
-controlPv "$(CS):GASTEMP.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 145
-w 130
-h 25
-controlPv "$(CS):GASERROR"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 145
-w 210
-h 25
-controlPv "$(CS):GASERROR.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 175
-w 130
-h 25
-controlPv "$(CS):RUNMODE"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 175
-w 210
+y 180
+w 200
 h 25
 controlPv "$(CS):RUNMODE.DESC"
 fgColor index 14
@@ -490,9 +365,77 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 205
-w 130
+x 210
+y 120
+w 190
+h 25
+controlPv "$(CS):TEMP"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 150
+w 190
+h 25
+controlPv "$(CS):ERROR"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 180
+w 190
+h 25
+controlPv "$(CS):RUNMODE"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 210
+w 190
 h 25
 controlPv "$(CS):PHASE"
 font "arial-bold-r-14.0"
@@ -513,8 +456,8 @@ major 10
 minor 0
 release 0
 x 10
-y 205
-w 210
+y 210
+w 200
 h 25
 controlPv "$(CS):PHASE.DESC"
 fgColor index 14
@@ -531,9 +474,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 235
-w 130
+x 210
+y 240
+w 190
 h 25
 controlPv "$(CS):RAMPRATE"
 font "arial-bold-r-14.0"
@@ -555,8 +498,8 @@ major 10
 minor 0
 release 0
 x 10
-y 235
-w 210
+y 240
+w 200
 h 25
 controlPv "$(CS):RAMPRATE.DESC"
 fgColor index 14
@@ -573,9 +516,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 265
-w 130
+x 210
+y 270
+w 190
 h 25
 controlPv "$(CS):TARGETTEMP"
 font "arial-bold-r-14.0"
@@ -597,8 +540,8 @@ major 10
 minor 0
 release 0
 x 10
-y 265
-w 210
+y 270
+w 200
 h 25
 controlPv "$(CS):TARGETTEMP.DESC"
 fgColor index 14
@@ -615,9 +558,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 295
-w 130
+x 210
+y 300
+w 190
 h 25
 controlPv "$(CS):EVAPTEMP"
 font "arial-bold-r-14.0"
@@ -632,76 +575,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 295
-w 210
-h 25
-controlPv "$(CS):EVAPTEMP.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 325
-w 130
-h 25
-controlPv "$(CS):SUCTTEMP"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 325
-w 210
-h 25
-controlPv "$(CS):SUCTTEMP.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 355
-w 130
+x 210
+y 330
+w 190
 h 25
 controlPv "$(CS):REMAINING"
 font "arial-bold-r-14.0"
@@ -723,8 +605,8 @@ major 10
 minor 0
 release 0
 x 10
-y 355
-w 210
+y 330
+w 200
 h 25
 controlPv "$(CS):REMAINING.DESC"
 fgColor index 14
@@ -741,9 +623,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 385
-w 130
+x 210
+y 360
+w 190
 h 25
 controlPv "$(CS):GASFLOW"
 font "arial-bold-r-14.0"
@@ -758,34 +640,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 385
-w 210
-h 25
-controlPv "$(CS):GASFLOW.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 415
-w 130
+x 210
+y 390
+w 190
 h 25
 controlPv "$(CS):GASHEAT"
 font "arial-bold-r-14.0"
@@ -800,34 +663,15 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 415
-w 210
-h 25
-controlPv "$(CS):GASHEAT.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 445
-w 130
+x 210
+y 420
+w 190
 h 25
 controlPv "$(CS):EVAPHEAT"
 font "arial-bold-r-14.0"
@@ -842,123 +686,21 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 445
-w 210
-h 25
-controlPv "$(CS):EVAPHEAT.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 475
-w 130
+x 210
+y 540
+w 190
 h 25
-controlPv "$(CS):SUCTHEAT"
+controlPv "$(CS):ALARM.VALA"
 font "arial-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 475
-w 210
-h 25
-controlPv "$(CS):SUCTHEAT.DESC"
-fgColor index 14
 fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 505
-w 130
-h 25
-controlPv "$(CS):BACKPRESS"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
-bgColor index 10
-limitsFromDb
-nullColor index 0
-useHexPrefix
-showUnits
-newPos
-objType "monitors"
-endObjectProperties
-
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 505
-w 210
-h 25
-controlPv "$(CS):BACKPRESS.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 220
-y 535
-w 130
-h 25
-controlPv "$(CS):ALARM"
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 16
 bgColor index 10
 limitsFromDb
 nullColor index 0
@@ -974,8 +716,8 @@ major 10
 minor 0
 release 0
 x 10
-y 535
-w 210
+y 540
+w 200
 h 25
 controlPv "$(CS):ALARM.DESC"
 fgColor index 14
@@ -992,9 +734,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 565
-w 130
+x 210
+y 570
+w 190
 h 25
 controlPv "$(CS):RUNTIME"
 font "arial-bold-r-14.0"
@@ -1016,8 +758,8 @@ major 10
 minor 0
 release 0
 x 10
-y 565
-w 210
+y 570
+w 200
 h 25
 controlPv "$(CS):RUNTIME.DESC"
 fgColor index 14
@@ -1034,9 +776,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 595
-w 130
+x 210
+y 600
+w 190
 h 25
 controlPv "$(CS):CTRLNUM"
 font "arial-bold-r-14.0"
@@ -1058,8 +800,8 @@ major 10
 minor 0
 release 0
 x 10
-y 595
-w 210
+y 600
+w 200
 h 25
 controlPv "$(CS):CTRLNUM.DESC"
 fgColor index 14
@@ -1076,9 +818,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 625
-w 130
+x 210
+y 630
+w 190
 h 25
 controlPv "$(CS):VER"
 font "arial-bold-r-14.0"
@@ -1100,8 +842,8 @@ major 10
 minor 0
 release 0
 x 10
-y 625
-w 210
+y 630
+w 200
 h 25
 controlPv "$(CS):VER.DESC"
 fgColor index 14
@@ -1118,9 +860,9 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 220
-y 655
-w 130
+x 210
+y 660
+w 190
 h 25
 controlPv "$(CS):EVAPADJUST"
 font "arial-bold-r-14.0"
@@ -1135,68 +877,26 @@ newPos
 objType "monitors"
 endObjectProperties
 
-# (Textupdate)
-object TextupdateClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 10
-y 655
-w 210
-h 25
-controlPv "$(CS):EVAPADJUST.DESC"
-fgColor index 14
-fgAlarm
-bgColor index 5
-fill
-font "arial-bold-r-14.0"
-fontAlign "center"
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
 major 4
 minor 1
 release 0
-x 365
-y 660
-w 148
-h 22
-font "arial-bold-r-20.0"
+x 420
+y 665
+w 150
+h 25
+font "arial-bold-r-18.0"
 fontAlign "center"
-fgColor index 0
+fgColor index 22
 bgColor index 0
-useDisplayBg
-visPv "$(CS):STATUS.STAT"
+visPv "$(CS):STATUS.SEVR"
 visMin "1"
 visMax "5"
 value {
   "Not Connected"
 }
-autoSize
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 365
-y 40
-w 52
-h 14
-font "arial-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Control  "
-}
-autoSize
-border
 endObjectProperties
 
 # (Textentry)
@@ -1205,7 +905,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 480
+x 535
 y 265
 w 105
 h 35
@@ -1216,34 +916,13 @@ fill
 font "arial-bold-r-14.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 5
-y 40
-w 48
-h 14
-font "arial-medium-r-12.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 8
-value {
-  "  Status  "
-}
-autoSize
-border
-endObjectProperties
-
 # (Textentry)
 object TextentryClass
 beginObjectProperties
 major 10
 minor 0
 release 0
-x 480
+x 535
 y 225
 w 105
 h 35
@@ -1260,7 +939,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
+x 425
 y 305
 w 215
 h 35
@@ -1284,8 +963,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
-y 95
+x 425
+y 100
 w 215
 h 35
 fgColor index 19
@@ -1295,8 +974,8 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(CS):RESTART.PROC"
 pressValue "1"
-onLabel "Restart"
-offLabel "Restart"
+onLabel "Start / Restart"
+offLabel "Start / Restart"
 3d
 useEnumNumeric
 font "arial-bold-r-14.0"
@@ -1308,7 +987,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 370
+x 425
 y 225
 w 105
 h 35
@@ -1328,7 +1007,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 370
+x 425
 y 265
 w 105
 h 35
@@ -1349,7 +1028,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 370
+x 425
 y 355
 w 105
 h 35
@@ -1369,7 +1048,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 480
+x 535
 y 355
 w 105
 h 35
@@ -1386,7 +1065,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
+x 425
 y 395
 w 215
 h 35
@@ -1410,8 +1089,8 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 480
-y 55
+x 535
+y 60
 w 105
 h 35
 fgColor index 25
@@ -1434,7 +1113,7 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 370
+x 425
 y 445
 w 105
 h 35
@@ -1455,7 +1134,7 @@ beginObjectProperties
 major 10
 minor 0
 release 0
-x 480
+x 535
 y 445
 w 105
 h 35
@@ -1472,7 +1151,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
+x 425
 y 485
 w 215
 h 35
@@ -1490,75 +1169,14 @@ useEnumNumeric
 font "arial-bold-r-14.0"
 endObjectProperties
 
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 0
-x 370
-y 535
-w 105
-h 35
-font "arial-bold-r-14.0"
-fontAlign "center"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "End Rate"
-}
-endObjectProperties
-
-# (Textentry)
-object TextentryClass
-beginObjectProperties
-major 10
-minor 0
-release 0
-x 480
-y 535
-w 105
-h 35
-controlPv "$(CS):ERATE"
-fgColor index 25
-bgColor index 0
-fill
-font "arial-bold-r-14.0"
-endObjectProperties
-
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
-y 575
-w 215
-h 35
-fgColor index 25
-onColor index 4
-offColor index 3
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(CS):END.PROC"
-pressValue "1"
-onLabel "End"
-offLabel "End"
-3d
-useEnumNumeric
-font "arial-bold-r-14.0"
-endObjectProperties
-
-# (Message Button)
-object activeMessageButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 370
-y 55
+x 425
+y 60
 w 105
 h 35
 fgColor index 25
@@ -1568,8 +1186,8 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(CS):PURGE.PROC"
 pressValue "1"
-onLabel "Purge"
-offLabel "Purge"
+onLabel "$(purge)"
+offLabel "$(purge)"
 3d
 useEnumNumeric
 font "arial-bold-r-14.0"
@@ -1581,7 +1199,7 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 370
+x 425
 y 525
 w 215
 h 0
@@ -1589,8 +1207,8 @@ lineColor index 14
 fillColor index 0
 numPoints 2
 xPoints {
-  0 370
-  1 585
+  0 425
+  1 640
 }
 yPoints {
   0 525
@@ -1604,7 +1222,7 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 370
+x 425
 y 435
 w 215
 h 0
@@ -1612,8 +1230,8 @@ lineColor index 14
 fillColor index 0
 numPoints 2
 xPoints {
-  0 370
-  1 585
+  0 425
+  1 640
 }
 yPoints {
   0 435
@@ -1627,7 +1245,7 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 370
+x 425
 y 345
 w 215
 h 0
@@ -1635,8 +1253,8 @@ lineColor index 14
 fillColor index 0
 numPoints 2
 xPoints {
-  0 370
-  1 585
+  0 425
+  1 640
 }
 yPoints {
   0 345
@@ -1650,7 +1268,7 @@ beginObjectProperties
 major 4
 minor 0
 release 1
-x 370
+x 425
 y 215
 w 215
 h 0
@@ -1658,8 +1276,8 @@ lineColor index 14
 fillColor index 0
 numPoints 2
 xPoints {
-  0 370
-  1 585
+  0 425
+  1 640
 }
 yPoints {
   0 215
@@ -1673,10 +1291,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
-y 135
+x 425
+y 140
 w 105
-h 35
+h 30
 fgColor index 42
 onColor index 4
 offColor index 3
@@ -1697,10 +1315,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 480
-y 135
+x 535
+y 140
 w 105
-h 35
+h 30
 fgColor index 42
 onColor index 4
 offColor index 3
@@ -1715,36 +1333,13 @@ useEnumNumeric
 font "arial-bold-r-14.0"
 endObjectProperties
 
-# (Lines)
-object activeLineClass
-beginObjectProperties
-major 4
-minor 0
-release 1
-x 370
-y 615
-w 215
-h 0
-lineColor index 14
-fillColor index 0
-numPoints 2
-xPoints {
-  0 370
-  1 585
-}
-yPoints {
-  0 615
-  1 615
-}
-endObjectProperties
-
 # (Message Button)
 object activeMessageButtonClass
 beginObjectProperties
 major 4
 minor 0
 release 0
-x 370
+x 425
 y 175
 w 215
 h 35
@@ -1768,10 +1363,10 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 480
-y 620
+x 535
+y 535
 w 105
-h 30
+h 25
 fgColor index 25
 bgColor index 3
 inconsistentColor index 0
@@ -1788,10 +1383,10 @@ beginObjectProperties
 major 4
 minor 1
 release 0
-x 370
-y 620
+x 430
+y 535
 w 105
-h 30
+h 25
 font "arial-bold-r-14.0"
 fontAlign "center"
 fgColor index 14
@@ -1800,5 +1395,663 @@ useDisplayBg
 value {
   "Turbo"
 }
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 420
+y 40
+w 52
+h 14
+font "arial-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Control  "
+}
+autoSize
+border
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 5
+y 40
+w 48
+h 14
+font "arial-medium-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 8
+value {
+  "  Status  "
+}
+autoSize
+border
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 425
+y 565
+w 215
+h 85
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 425
+y 565
+w 215
+h 0
+lineColor index 14
+fillColor index 0
+numPoints 2
+xPoints {
+  0 425
+  1 640
+}
+yPoints {
+  0 565
+  1 565
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 425
+y 575
+w 105
+h 35
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "End Rate"
+}
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 535
+y 575
+w 105
+h 35
+controlPv "$(CS):ERATE"
+fgColor index 25
+bgColor index 0
+fill
+font "arial-bold-r-14.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 425
+y 615
+w 215
+h 35
+fgColor index 25
+onColor index 4
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(CS):END.PROC"
+pressValue "1"
+onLabel "End"
+offLabel "End"
+3d
+useEnumNumeric
+font "arial-bold-r-14.0"
+endObjectProperties
+
+endGroup
+
+visPv "$(CS):CSTYPE"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 120
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(gas) Temperature"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 150
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(gas) Error"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 90
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(gas) Setpoint"
+}
+endObjectProperties
+
+# (Menu Mux)
+object menuMuxClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 2000
+y 240
+w 150
+h 45
+fgColor index 14
+bgColor index 0
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(CS):CSTYPE"
+font "arial-medium-r-18.0"
+numItems 2
+symbolTag {
+  0 "Cryostream"
+  1 "Phenix"
+}
+symbol0 {
+  0 "purge"
+  1 "purge"
+}
+value0 {
+  0 "Purge"
+  1 "Warm"
+}
+symbol1 {
+  0 "gas"
+  1 "gas"
+}
+value1 {
+  0 "Gas"
+  1 "Sample"
+}
+symbol2 {
+  0 "evap"
+  1 "evap"
+}
+value2 {
+  0 "Evap"
+  1 "Shield"
+}
+symbol3 {
+  0 "gasflow"
+  1 "gasflow"
+}
+value3 {
+  0 "Gas Flow"
+  1 "Cryo Speed"
+}
+symbol4 {
+  0 "evapadjust"
+  1 "evapadjust"
+}
+value4 {
+  0 "Evap Adjust"
+  1 "Evap Adjust"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 300
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(evap) Temperature"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 390
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(gas) Heat"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 420
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(evap) Heat"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 360
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(gasflow)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 660
+w 200
+h 25
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(evapadjust)"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 2
+release 0
+x 605
+y 5
+w 40
+h 20
+fgColor index 43
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "arial-bold-r-12.0"
+buttonLabel "Asyn"
+numCmds 1
+command {
+  0 "cd /home/diamond/R3.14.8.2/prod/support/asyn/4-6/medm; medm -x -macro \"P=$(CS),R=:ASYN\" asynRecord.adl"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 450
+w 385
+h 85
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 450
+w 165
+h 85
+font "arial-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Cryodrive: Activated"
+  ""
+  "In Manual Mode"
+  ""
+  "Start Cmd Received"
+}
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 455
+w 25
+h 25
+controlPv "$(CS):BACKPRESS"
+lineColor index 14
+onColor index 15
+offColor index 19
+numBits 1
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 480
+w 25
+h 50
+controlPv "$(CS):BACKPRESS"
+lineColor index 14
+onColor index 19
+offColor index 15
+numBits 2
+shift 5
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 450
+w 155
+h 85
+font "arial-bold-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "High Temp Warning"
+  ""
+  "High Temp Trip"
+  ""
+  "Low Pressure Warning"
+}
+endObjectProperties
+
+# (Byte)
+object ByteClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 370
+y 455
+w 25
+h 75
+controlPv "$(CS):BACKPRESS"
+lineColor index 14
+onColor index 24
+offColor index 20
+numBits 3
+shift 1
+endObjectProperties
+
+endGroup
+
+visPv "$(CS):CSTYPE"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 450
+w 390
+h 85
+
+beginGroup
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 10
+y 510
+w 200
+h 25
+controlPv "$(CS):BACKPRESS.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 5
+fill
+font "arial-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 10
+y 480
+w 200
+h 25
+controlPv "$(CS):SUCTHEAT.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 5
+fill
+font "arial-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 10
+y 450
+w 200
+h 25
+controlPv "$(CS):SUCTTEMP.DESC"
+fgColor index 14
+fgAlarm
+bgColor index 5
+fill
+font "arial-bold-r-14.0"
+fontAlign "center"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 450
+w 190
+h 25
+controlPv "$(CS):SUCTTEMP"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 480
+w 190
+h 25
+controlPv "$(CS):SUCTHEAT"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 210
+y 510
+w 190
+h 25
+controlPv "$(CS):BACKPRESS"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+bgColor index 10
+limitsFromDb
+nullColor index 0
+useHexPrefix
+showUnits
+newPos
+objType "monitors"
+endObjectProperties
+
+endGroup
+
+visPv "$(CS):CSTYPE"
+visMin "0"
+visMax "1"
 endObjectProperties
 

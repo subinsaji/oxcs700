@@ -16,9 +16,10 @@ WORK=/dls_sw/work/R3.14.8.2/support
 # define INSTALL_LOCATION_APP here
 #INSTALL_LOCATION_APP=<fullpathname>
 
-OXCS700=/home/tmc43/R3.14.8.2/support/OXCS700
-ASYN=	$(WORK)/asyn
-STREAM=	$(WORK)/streamDevice
+OXCS700=$(WORK)/OXCS700
+ASYN=	$(SUPPORT)/asyn/4-9
+STREAM=	$(SUPPORT)/streamDevice/2-3dls3
+GENSUB= $(SUPPORT)/genSub/1-6dls2-5
 
 #If using the sequencer, uncomment this line:
 #SNCSEQ=/home/diamond/R3.14.7/prod/support/seq/2-0-10

@@ -12,35 +12,23 @@ record(mbbi, "$(P)$(Q):PHASE") {
   field(ONVL, "1")
   field(TWVL, "2")
   field(THVL, "3")
-  field(FRVL, "4")
-  field(FVVL, "5")
-  field(SXVL, "6")
-  field(SVVL, "7")
-  field(EIVL, "8")
-  field(NIVL, "9")
-  field(TEVL, "10")
+  field(FVVL, "4")
+  field(SXVL, "5")
+  field(SVVL, "6")
+  field(EIVL, "7")
+  field(NIVL, "8")
+  field(TEVL, "19")
   field(ZRST, "Ramp")
   field(ONST, "Cool")
   field(TWST, "Plat")
   field(THST, "Hold")
-  field(FRST, "End")
-  field(FVST, "Purge")
+  field(FRST, "Unused")
+  field(FVST, "Warm")
   field(SXST, "Delete Phase")
   field(SVST, "Load Program")
   field(EIST, "Save Program")
   field(NIST, "Soak")
   field(TEST, "Wait")
-}
-
-record(ai, "$(P)$(Q):BACKPRESS") {
-  field(DESC, "Back Pressure")
-  field(DTYP, "Raw Soft Channel")
-  field(PINI, "YES")
-  field(LINR, "LINEAR")
-  field(ESLO, "0.01")
-  field(EOFF, "0")
-  field(PREC, "2")
-  field(EGU, "bar")
 }
 
 expand("OXcommon700.vdb", OXcommon700) {
@@ -50,14 +38,21 @@ expand("OXcommon700.vdb", OXcommon700) {
 record(ai, "$(P)$(Q):CSTYPE") {
   field(DESC, "Cryostream type")
   field(PINI, "YES")
-  field(VAL, "0")
+  field(VAL, "1")
+}
+
+
+record(ai, "$(P)$(Q):BACKPRESS") {
+  field(DESC, "Cryo Status")
+  field(DTYP, "Raw Soft Channel")
+  field(PINI, "YES")
 }
 
 #! Further lines contain data used by VisualDCT
-#! View(1966,299,0.6)
-#! Record("$(P)$(Q):PHASE",4060,645,0,0,"$(P)$(Q):PHASE")
-#! Record("$(P)$(Q):BACKPRESS",4260,709,0,0,"$(P)$(Q):BACKPRESS")
+#! View(2020,353,0.6)
+#! Record("$(P)$(Q):PHASE",4060,659,0,0,"$(P)$(Q):PHASE")
 
 #! TemplateInstance("OXcommon700",3800,780,0,"")
 
 #! Record("$(P)$(Q):CSTYPE",4460,742,0,1,"$(P)$(Q):CSTYPE")
+#! Record("$(P)$(Q):BACKPRESS",4260,802,0,0,"$(P)$(Q):BACKPRESS")

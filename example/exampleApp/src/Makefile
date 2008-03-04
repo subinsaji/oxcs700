@@ -15,8 +15,10 @@ DBD += example.dbd
 example_DBD += base.dbd
 example_DBD += asyn.dbd
 example_DBD += drvAsynIPPort.dbd
-example_DBD += drvAsynSerialPort.dbd
+#example_DBD += drvAsynSerialPort.dbd
 example_DBD += stream.dbd
+example_DBD += OXCS700Support.dbd
+example_DBD += genSubRecord.dbd
 
 # example_registerRecordDeviceDriver.cpp will be created
 # example.dbd
@@ -34,8 +36,10 @@ example_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # This line says that this IOC Application depends on the
 # xxx Support Module
-example_LIBS += stream
 example_LIBS += asyn
+example_LIBS += stream
+example_LIBS += OXCS700
+example_LIBS += genSub
 
 # We need to link this IOC Application against the EPICS Base libraries
 example_LIBS += $(EPICS_BASE_IOC_LIBS)

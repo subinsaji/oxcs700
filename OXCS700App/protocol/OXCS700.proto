@@ -28,14 +28,24 @@ MaxInput = 32;
 # 28,29: unsigned short ControllerNumber
 # 30: unsigned char SoftwareVersion
 # 31: unsigned char EvapAdjust
-read { in "%1c%(\$1:TYPE.RVAL)r%(\$1:GASSETPOINT.RVAL)2r"
-          "%(\$1:GASTEMP.RVAL)2r%(\$1:GASERROR.RVAL)2r"
-          "%(\$1:RUNMODE.RVAL)r%(\$1:PHASE.RVAL)r%(\$1:RAMPRATE.RVAL)2r"
-          "%(\$1:TARGETTEMP.RVAL)2r%(\$1:EVAPTEMP.RVAL)2r"
-          "%(\$1:SUCTTEMP.RVAL)2r%(\$1:REMAINING.RVAL)2r%(\$1:GASFLOW.RVAL)r"
-          "%(\$1:GASHEAT.RVAL)r%(\$1:EVAPHEAT.RVAL)r%(\$1:SUCTHEAT.RVAL)r"
-          "%(\$1:BACKPRESS.RVAL)r%(\$1:ALARM.RVAL)r%(\$1:RUNTIME.RVAL)2r"
-          "%(\$1:CTRLNUM.RVAL)2r%(\$1:VER.RVAL)r%(\$1:EVAPADJUST.RVAL)r"; }
+read { in "%1c%(\$1:TYPE.RVAL)0r%(\$1:SETPOINT.RVAL)02r"
+          "%(\$1:TEMP.RVAL)02r%(\$1:ERROR.RVAL)2r"
+          "%(\$1:RUNMODE.RVAL)0r%(\$1:PHASE.RVAL)0r%(\$1:RAMPRATE.RVAL)02r"
+          "%(\$1:TARGETTEMP.RVAL)02r%(\$1:EVAPTEMP.RVAL)02r"
+          "%(\$1:SUCTTEMP.RVAL)02r%(\$1:REMAINING.RVAL)02r%(\$1:GASFLOW.RVAL)0r"
+          "%(\$1:GASHEAT.RVAL)0r%(\$1:EVAPHEAT.RVAL)0r%(\$1:SUCTHEAT.RVAL)0r"
+          "%(\$1:BACKPRESS.RVAL)0r%(\$1:ALARMI.RVAL)0r%(\$1:RUNTIME.RVAL)02r"
+          "%(\$1:CTRLNUM.RVAL)02r%(\$1:VER.RVAL)0r%(\$1:EVAPADJUST.RVAL)0r"; }
+
+#read { in "%1c%(\$1:TYPE.RVAL)r%(\$1:SETPOINT.RVAL)2r"
+#          "%(\$1:TEMP.RVAL)2r%(\$1:ERROR.RVAL)2r"
+#          "%(\$1:RUNMODE.RVAL)r%(\$1:PHASE.RVAL)r%(\$1:RAMPRATE.RVAL)2r"
+#          "%(\$1:TARGETTEMP.RVAL)2r%(\$1:EVAPTEMP.RVAL)2r"
+#          "%(\$1:SUCTTEMP.RVAL)2r%(\$1:REMAINING.RVAL)2r%(\$1:GASFLOW.RVAL)r"
+#          "%(\$1:GASHEAT.RVAL)r%(\$1:EVAPHEAT.RVAL)r%(\$1:SUCTHEAT.RVAL)r"
+#          "%(\$1:BACKPRESS.RVAL)r%(\$1:ALARMI.RVAL)r%(\$1:RUNTIME.RVAL)2r"
+#          "%(\$1:CTRLNUM.RVAL)2r%(\$1:VER.RVAL)r%(\$1:EVAPADJUST.RVAL)r"; }
+
 
 # structure of valid command packet is
 # char size of packet
@@ -43,11 +53,11 @@ read { in "%1c%(\$1:TYPE.RVAL)r%(\$1:GASSETPOINT.RVAL)2r"
 # char *params, list of params
 
 restart { out "\x02\x0a"; }
-ramp    { out "\x06\x0b%(\$1:RRATE.RVAL)2r%(\$1:RTEMP.RVAL)2r"; }
-plat    { out "\x04\x0c%(\$1:PTIME.RVAL)2r"; }
+ramp    { out "\x06\x0b%(\$1:RRATEH.RVAL)r%(\$1:RRATEL.RVAL)r%(\$1:RTEMPH.RVAL)r%(\$1:RTEMPL.RVAL)r"; }
+plat    { out "\x04\x0c%(\$1:PTIMEH.RVAL)r%(\$1:PTIMEL.RVAL)r"; }
 hold    { out "\x02\x0d"; }
-cool    { out "\x04\x0e%(\$1:CTEMP.RVAL)2r"; }
-end     { out "\x04\x0f%(\$1:ERATE.RVAL)2r"; }
+cool    { out "\x04\x0e%(\$1:CTEMPH.RVAL)r%(\$1:CTEMPL.RVAL)r"; }
+end     { out "\x04\x0f%(\$1:ERATEH.RVAL)r%(\$1:ERATEL.RVAL)r"; }
 purge   { out "\x02\x10"; }
 pause   { out "\x02\x11"; }
 resume  { out "\x02\x12"; }

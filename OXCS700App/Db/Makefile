@@ -12,6 +12,8 @@ include $(TOP)/configure/CONFIG
 # templates like this
 #
 DB += OXCS700.template
+DB += OXPH700.template
+
 
 include $(TOP)/configure/RULES
 #----------------------------------------

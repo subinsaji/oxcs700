@@ -26,7 +26,8 @@ example_registerRecordDeviceDriver(pdbbase)
 #                           unsigned int priority, 
 #                           int noAutoConnect,
 #                           int noProcessEos);
-drvAsynIPPortConfigure("OXCS700p","172.23.111.5:7006",0,0,0)
+drvAsynIPPortConfigure("OXCS700p","172.23.111.5:7001",0,0,0)
+drvAsynIPPortConfigure("OXPH700p","172.23.111.5:7004",0,0,0)
 
 epicsEnvSet "STREAM_PROTOCOL_PATH", "$(OXCS700)/data"
 
