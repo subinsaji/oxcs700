@@ -3,7 +3,9 @@
 #! DBD("../../dbd/OXCS700vdct.dbd")
 #! DBDEND
 
+# %gdatag,template,OXCS700,$(gda_name),$(gda_desc)
 
+# %gdatag,mbbinary,ro,$(gda_name),PHASE
 record(mbbi, "$(P)$(Q):PHASE") {
   field(DESC, "Phase Id")
   field(DTYP, "Raw Soft Channel")
