@@ -192,7 +192,7 @@ record(ao, "$(P)$(Q):RTEMP") {
   field(PREC, "2")
   field(EGU, "K")
   field(DRVL, "80.00")
-  field(DRVH, "327.67")
+  field(DRVH, "500.00")
   field(FLNK, "$(P)$(Q):RTEMPCH")
 }
 
@@ -241,11 +241,6 @@ record(ao, "$(P)$(Q):CTEMP") {
   field(DRVL, "80.00")
   field(DRVH, "327.67")
   field(FLNK, "$(P)$(Q):CTEMPCH")
-}
-
-record(ao, "$(P)$(Q):END") {
-  field(DTYP, "stream")
-  field(OUT, "@OXCS700.proto end($(P)$(Q)) $(PORT)")
 }
 
 record(ao, "$(P)$(Q):ERATE") {
@@ -464,7 +459,7 @@ record(ai, "$(P)$(Q):ERROR") {
   field(EGU, "K")
 }
 
-# %gdatag,pv,ro,$(gda_name),ALARM
+# %gdatag,pv,ro,$(gda_name),ALARM,Alarm Status,<pv>.VALA
 record(genSub, "$(P)$(Q):ALARM") {
   field(DESC, "Alarm Status")
   field(INPA, "$(P)$(Q):ALARMI")

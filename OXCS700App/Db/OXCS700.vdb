@@ -49,6 +49,12 @@ expand("OXcommon700.vdb", OXcommon700) {
 }
 
 
+# %gdatag,pv,rw,$(gda_name),END,Warm to room temp and stop
+record(ao, "$(P)$(Q):END") {
+  field(DTYP, "stream")
+  field(OUT, "@OXCS700.proto end($(P)$(Q)) $(PORT)")
+}
+
 record(ai, "$(P)$(Q):CSTYPE") {
   field(DESC, "Cryostream type")
   field(PINI, "YES")
