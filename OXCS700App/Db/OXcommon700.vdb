@@ -249,6 +249,7 @@ record(ao, "$(P)$(Q):ERATE") {
   field(PINI, "YES")
   field(EGU, "K/hour")
   field(DRVL, "1")
+  field(VAL, "360")
   field(DRVH, "360")
   field(FLNK, "$(P)$(Q):ERATECH")
 }
