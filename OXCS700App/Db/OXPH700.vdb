@@ -36,6 +36,21 @@ record(mbbi, "$(P)$(Q):PHASE") {
 expand("OXcommon700.vdb", OXcommon700) {
 }
 
+# %gdatag,pv,rw,$(gda_name),RTEMP
+record(ao, "$(P)$(Q):RTEMP") {
+  field(DESC, "Ramp Target Temp")
+  field(DTYP, "Raw Soft Channel")
+  field(PINI, "YES")
+  field(LINR, "LINEAR")
+  field(ESLO, "0.01")
+  field(EOFF, "0")
+  field(PREC, "2")
+  field(EGU, "K")
+  field(DRVL, "11.00")
+  field(DRVH, "300.00")
+  field(FLNK, "$(P)$(Q):RTEMPCH")
+}
+
 
 record(ai, "$(P)$(Q):CSTYPE") {
   field(DESC, "Cryostream type")

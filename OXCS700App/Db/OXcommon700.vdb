@@ -178,22 +178,8 @@ record(ao, "$(P)$(Q):RRATE") {
   field(EGU, "K/hour")
   field(DRVL, "1")
   field(DRVH, "360")
+  field(VAL, "360")
   field(FLNK, "$(P)$(Q):RRATECH")
-}
-
-# %gdatag,pv,rw,$(gda_name),RTEMP
-record(ao, "$(P)$(Q):RTEMP") {
-  field(DESC, "Ramp Target Temp")
-  field(DTYP, "Raw Soft Channel")
-  field(PINI, "YES")
-  field(LINR, "LINEAR")
-  field(ESLO, "0.01")
-  field(EOFF, "0")
-  field(PREC, "2")
-  field(EGU, "K")
-  field(DRVL, "80.00")
-  field(DRVH, "500.00")
-  field(FLNK, "$(P)$(Q):RTEMPCH")
 }
 
 # %gdatag,pv,rw,$(gda_name),PLAT

@@ -48,6 +48,20 @@ record(ai, "$(P)$(Q):BACKPRESS") {
 expand("OXcommon700.vdb", OXcommon700) {
 }
 
+# %gdatag,pv,rw,$(gda_name),RTEMP
+record(ao, "$(P)$(Q):RTEMP") {
+  field(DESC, "Ramp Target Temp")
+  field(DTYP, "Raw Soft Channel")
+  field(PINI, "YES")
+  field(LINR, "LINEAR")
+  field(ESLO, "0.01")
+  field(EOFF, "0")
+  field(PREC, "2")
+  field(EGU, "K")
+  field(DRVL, "80.00")
+  field(DRVH, "500.00")
+  field(FLNK, "$(P)$(Q):RTEMPCH")
+}
 
 # %gdatag,pv,rw,$(gda_name),END,Warm to room temp and stop
 record(ao, "$(P)$(Q):END") {
