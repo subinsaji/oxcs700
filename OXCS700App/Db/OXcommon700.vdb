@@ -149,7 +149,7 @@ record(asyn, "$(P)$(Q):ASYN") {
   field(TMOT, "0.1")
 }
 
-record(stringin, "$(P)$(Q):STATUS") {
+record(ai, "$(P)$(Q):STATUS") {
   field(SCAN, ".5 second")
   field(DTYP, "stream")
   field(VAL, "1")

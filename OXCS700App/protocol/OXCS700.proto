@@ -2,7 +2,7 @@ Terminator = "";
 ReadTimeout = 100;
 PollPeriod = 100;
 ReplyTimeout = 2000;
-MaxInput = 32;
+#MaxInput = 32;
 
 # read status input
 # 32 byte packet:
@@ -28,7 +28,7 @@ MaxInput = 32;
 # 28,29: unsigned short ControllerNumber
 # 30: unsigned char SoftwareVersion
 # 31: unsigned char EvapAdjust
-read { in "%1c%(\$1:TYPE.RVAL)0r%(\$1:SETPOINT.RVAL)02r"
+read { in "%0r%(\$1:TYPE.RVAL)0r%(\$1:SETPOINT.RVAL)02r"
           "%(\$1:TEMP.RVAL)02r%(\$1:ERROR.RVAL)2r"
           "%(\$1:RUNMODE.RVAL)0r%(\$1:PHASE.RVAL)0r%(\$1:RAMPRATE.RVAL)02r"
           "%(\$1:TARGETTEMP.RVAL)02r%(\$1:EVAPTEMP.RVAL)02r"
