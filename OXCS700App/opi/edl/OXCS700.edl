@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 730
-y 385
+x 735
+y 406
 w 653
 h 697
 font "arial-medium-r-18.0"
@@ -19,7 +19,7 @@ ctlBgColor1 index 0
 ctlBgColor2 index 14
 topShadowColor index 0
 botShadowColor index 14
-title "Cryostream - $(CS)"
+title "Series 700 - $(CS)"
 showGrid
 snapToGrid
 gridSize 5
@@ -124,7 +124,7 @@ fontAlign "center"
 fgColor index 14
 bgColor index 48
 value {
-  "Cryostream series 700 setup - $(CS)"
+  "$(cstype) series 700 setup - $(CS)"
 }
 endObjectProperties
 
@@ -1663,6 +1663,14 @@ symbol4 {
 value4 {
   0 "Evap Adjust"
   1 "Evap Adjust"
+}
+symbol5 {
+  0 "cstype"
+  1 "cstype"
+}
+value5 {
+  0 "Oxford Cryostream"
+  1 "Phenix Cryostat"
 }
 endObjectProperties
 
