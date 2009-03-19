@@ -67,6 +67,7 @@ record(ao, "$(P)$(Q):RTEMP") {
 record(ao, "$(P)$(Q):END") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto end($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE") 
 }
 
 record(ai, "$(P)$(Q):CSTYPE") {

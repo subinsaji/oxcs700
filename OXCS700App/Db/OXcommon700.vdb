@@ -154,6 +154,7 @@ record(ai, "$(P)$(Q):STATUS") {
   field(DTYP, "stream")
   field(VAL, "1")
   field(INP, "@OXCS700.proto read($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")  
 }
 
 # %gdatag,pv,rw,$(gda_name),RESTART
@@ -161,6 +162,7 @@ record(ao, "$(P)$(Q):RESTART") {
   field(DESC, "Start/Restart program")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto restart($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),RAMP
@@ -168,6 +170,7 @@ record(ao, "$(P)$(Q):RAMP") {
   field(DESC, "Start a ramp")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto ramp($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),RRATE
@@ -187,6 +190,7 @@ record(ao, "$(P)$(Q):PLAT") {
   field(DESC, "Start a plat")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto plat($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),PTIME
@@ -205,6 +209,7 @@ record(ao, "$(P)$(Q):HOLD") {
   field(DESC, "Start a hold")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto hold($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),COOL
@@ -212,6 +217,7 @@ record(ao, "$(P)$(Q):COOL") {
   field(DESC, "Start a cool")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto cool($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),CTEMP
@@ -245,6 +251,7 @@ record(ao, "$(P)$(Q):PURGE") {
   field(DESC, "Start a Purge/Warm")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto purge($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),PAUSE
@@ -252,6 +259,7 @@ record(ao, "$(P)$(Q):PAUSE") {
   field(DESC, "Pause program")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto pause($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),RESUME
@@ -259,6 +267,7 @@ record(ao, "$(P)$(Q):RESUME") {
   field(DESC, "Resume program")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto resume($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 # %gdatag,pv,rw,$(gda_name),STOP
@@ -266,6 +275,7 @@ record(ao, "$(P)$(Q):STOP") {
   field(DESC, "Stop program")
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto stop($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 record(bo, "$(P)$(Q):TURBO") {
@@ -280,6 +290,7 @@ record(bo, "$(P)$(Q):TURBO") {
 record(ao, "$(P)$(Q):TURBOCMD") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto turbo($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
 }
 
 record(ao, "$(P)$(Q):RTEMPH") {
@@ -461,6 +472,16 @@ record(ai, "$(P)$(Q):ALARMI") {
   field(PINI, "YES")
   field(FLNK, "$(P)$(Q):ALARM")
 }
+
+record(bo, "$(P)$(Q):DISABLE") {
+  field(DESC, "Disable comms")
+  field(PINI, "YES")
+  field(VAL, "1")
+  field(OMSL, "supervisory")
+  field(ZNAM, "Enabled")
+  field(ONAM, "Disabled")
+}
+
 
 #! Further lines contain data used by VisualDCT
 #! View(911,81,0.6)
