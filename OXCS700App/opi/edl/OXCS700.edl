@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 357
-y 192
+x 23
+y 204
 w 653
 h 709
 font "arial-medium-r-18.0"
@@ -2085,5 +2085,27 @@ controlPv "$(CS):DISABLE"
 3d
 font "arial-bold-r-14.0"
 objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 80
+y 35
+w 120
+h 20
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 22
+bgColor index 0
+visPv "$(CS):STATUS.SEVR"
+visMin "1"
+visMax "5"
+value {
+  "Not Connected"
+}
 endObjectProperties
 

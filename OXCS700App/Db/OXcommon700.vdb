@@ -473,6 +473,7 @@ record(ai, "$(P)$(Q):ALARMI") {
   field(FLNK, "$(P)$(Q):ALARM")
 }
 
+# % gdatag,binary,rw,$(gda_name),DISABLE
 record(bo, "$(P)$(Q):DISABLE") {
   field(DESC, "Disable comms")
   field(PINI, "YES")
