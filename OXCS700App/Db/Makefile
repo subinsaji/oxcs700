@@ -13,7 +13,7 @@ include $(TOP)/configure/CONFIG
 #
 DB += OXCS700.template
 DB += OXPH700.template
-
+DB += ILM201.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------

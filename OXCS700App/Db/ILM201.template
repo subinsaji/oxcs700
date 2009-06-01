@@ -1,0 +1,63 @@
+#
+#  Database for Oxford Instruments Cryojet Autofill (model ILM201)
+#  <http://www.oxford-instruments.com/>
+#  Part description: Single liquid nitrogen level meter and probe
+#
+#  Parameters:
+#    $(P)     PV name prefix
+#    $(PORT)  asyn name for serial port connected to device
+#
+#  User notes:
+#    This driver buffers the level responses from the device. If the device
+#    returns an error response, the previous good response will be used
+#    instead. This will be done 3 times. After the 3rd time, the level will be
+#    reported as -1% indicating an error.
+
+# %gdatag,template,simplePv,$(gda_name),$(gda_desc)
+
+record(asyn, "$(P):RAWLEVEL") {
+  field(PORT, "$(PORT)")
+  field(AOUT, "R1")
+  field(TMOT, "3.0")
+}
+
+# I buffer the RawLevel value. If the RawLevel value is invalid more times
+# than my max error count (B), I provide a valid RawLevel value that indicates
+# an error (in this case, a negative fill percentage). However, if the
+# RawLevel value is invalid but the error count (A) is less than the max error
+# count, I provide the previous RawLevel value. This helps in cases where the
+# device may return an error response every once in a while for an unknown
+# reason but it usually returns a valid response to the same command for the
+# next request.
+record(scalcout, "$(P):RAWLEVELBUF") {
+  field(INPA, "$(P):RAWLEVELBUF.OVAL NPP NMS") # error count
+  field(B, "2") # max error count
+  field(OVAL, "3") # should be initialized to B+1
+  field(INAA, "$(P):RAWLEVEL.AINP PP MS")
+  field(INBB, "$(P):RAWLEVELBUF.SVAL NPP NMS") # previous raw level
+  field(CC, "R-00010") # raw level to use when exceed max error count
+  field(CALC, "AA[0,0]=='R'?AA:(A<=B?BB:CC)")
+  field(OCAL, "AA[0,0]=='R'?0:MIN(A+1,B+1)")
+  field(DOPT, "Use OCAL")
+}
+
+# %archiver 10 Monitor
+# %gdatag,pv,ro,$(gda_name),RECORD,Fill level
+record(scalcout, "$(P):LEVEL") {
+  field(SCAN, "10 second")
+  field(INAA, "$(P):RAWLEVELBUF.SVAL PP MS")
+  field(CALC, "DBL(SSCANF(AA,'R%f'))/10")
+  field(PREC, "1")
+  field(HIHI, "90.0")
+  field(HIGH, "81.0")
+  field(LOW, "39.0")
+  field(LOLO, "20.5")
+  field(HSV, "MINOR")
+  field(HHSV, "MAJOR")
+  field(LSV, "MINOR")
+  field(LLSV, "MAJOR")
+  field(HYST, "2")
+  field(HOPR, "100")
+  field(LOPR, "0")
+  field(EGU, "%")
+}
