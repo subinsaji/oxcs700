@@ -19,6 +19,7 @@ record(asyn, "$(P):RAWLEVEL") {
   field(PORT, "$(PORT)")
   field(AOUT, "R1")
   field(TMOT, "3.0")
+  field(SDIS, "$(P):DISABLE")
 }
 
 # I buffer the RawLevel value. If the RawLevel value is invalid more times
@@ -60,4 +61,13 @@ record(scalcout, "$(P):LEVEL") {
   field(HOPR, "100")
   field(LOPR, "0")
   field(EGU, "%")
+}
+
+record(bo, "$(P):DISABLE") {
+  field(DESC, "Disable comms")
+  field(PINI, "YES")
+  field(VAL, "1")
+  field(OMSL, "supervisory")
+  field(ZNAM, "Enabled")
+  field(ONAM, "Disabled")
 }
