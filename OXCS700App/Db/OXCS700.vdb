@@ -3,9 +3,9 @@
 #! DBD("../../dbd/OXCS700vdct.dbd")
 #! DBDEND
 
-# %gdatag,template,OXCS700,$(gda_name),$(gda_desc)
+# %gdatag,template,OXCS700,$(gda_name=),$(gda_desc=)
 
-# %gdatag,mbbinary,ro,$(gda_name),PHASE
+# %gdatag,mbbinary,ro,$(gda_name=),PHASE
 record(mbbi, "$(P)$(Q):PHASE") {
   field(DESC, "Phase Id")
   field(DTYP, "Raw Soft Channel")
@@ -48,7 +48,7 @@ record(ai, "$(P)$(Q):BACKPRESS") {
 expand("OXcommon700.vdb", OXcommon700) {
 }
 
-# %gdatag,pv,rw,$(gda_name),RTEMP
+# %gdatag,pv,rw,$(gda_name=),RTEMP
 record(ao, "$(P)$(Q):RTEMP") {
   field(DESC, "Ramp Target Temp")
   field(DTYP, "Raw Soft Channel")
@@ -63,7 +63,7 @@ record(ao, "$(P)$(Q):RTEMP") {
   field(FLNK, "$(P)$(Q):RTEMPCH")
 }
 
-# %gdatag,pv,rw,$(gda_name),END,Warm to room temp and stop
+# %gdatag,pv,rw,$(gda_name=),END,Warm to room temp and stop
 record(ao, "$(P)$(Q):END") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto end($(P)$(Q)) $(PORT)")
