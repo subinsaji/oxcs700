@@ -1,6 +1,4 @@
 TOP = ../..
 include $(TOP)/configure/CONFIG
-
-SCRIPTS=stexample.boot
-
+DATA += OXCS700_sim.py
 include $(TOP)/configure/RULES

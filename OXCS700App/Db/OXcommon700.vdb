@@ -149,6 +149,7 @@ record(asyn, "$(P)$(Q):ASYN") {
   field(TMOT, "0.1")
 }
 
+#% gui, $(name=), sevr
 record(ai, "$(P)$(Q):STATUS") {
   field(SCAN, ".5 second")
   field(DTYP, "stream")

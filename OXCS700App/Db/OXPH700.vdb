@@ -3,6 +3,18 @@
 #! DBD("../../dbd/OXCS700vdct.dbd")
 #! DBDEND
 
+# % macro, __doc__, Control for Oxford cryostream 700 series
+#
+# Macros:
+# % macro, P, Device Prefix
+# % macro, Q, Device suffix
+# % macro, PORT, Asyn port to connect to
+# % macro, gda_name, Name in gda interface file (Default = )
+# % macro, gda_desc, Description in gda interface file (Default = )
+# % macro, name, Object and gui association name
+#% gui, $(name=), edm, OXCS700.edl, CS=$(P)$(Q)
+#% gui, $(name=), edmembed, OXCS700_embed.edl, P=$(P),Q=$(Q)
+
 # %gdatag,template,OXCS700,$(gda_name=),$(gda_desc=)
 
 # %gdatag,mbbinary,ro,$(gda_name=),PHASE
@@ -73,3 +85,4 @@ record(ai, "$(P)$(Q):BACKPRESS") {
 
 #! Record("$(P)$(Q):CSTYPE",4460,742,0,1,"$(P)$(Q):CSTYPE")
 #! Record("$(P)$(Q):BACKPRESS",4260,802,0,0,"$(P)$(Q):BACKPRESS")
+
