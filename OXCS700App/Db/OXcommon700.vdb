@@ -11,6 +11,7 @@ record(ai, "$(P)$(Q):TYPE") {
   field(PINI, "YES")
 }
 
+# % archiver 1 Monitor
 # %gdatag,mbbinary,ro,$(gda_name=),RUNMODE
 record(mbbi, "$(P)$(Q):RUNMODE") {
   field(DESC, "Run Mode")
@@ -32,6 +33,7 @@ record(mbbi, "$(P)$(Q):RUNMODE") {
   field(SXST, "Shutdown Fail")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),RAMPRATE
 record(ai, "$(P)$(Q):RAMPRATE") {
   field(DESC, "Ramp Rate")
@@ -40,6 +42,7 @@ record(ai, "$(P)$(Q):RAMPRATE") {
   field(EGU, "K/hour")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),TARGETTEMP
 record(ai, "$(P)$(Q):TARGETTEMP") {
   field(DESC, "Target Temperature")
@@ -52,6 +55,7 @@ record(ai, "$(P)$(Q):TARGETTEMP") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):EVAPTEMP") {
   field(DESC, "Evap Temperature")
   field(DTYP, "Raw Soft Channel")
@@ -63,6 +67,7 @@ record(ai, "$(P)$(Q):EVAPTEMP") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):SUCTTEMP") {
   field(DESC, "Suct Temperature")
   field(DTYP, "Raw Soft Channel")
@@ -74,6 +79,7 @@ record(ai, "$(P)$(Q):SUCTTEMP") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),REMAINING
 record(ai, "$(P)$(Q):REMAINING") {
   field(DESC, "Time Remaining in Phase")
@@ -82,6 +88,7 @@ record(ai, "$(P)$(Q):REMAINING") {
   field(EGU, "min")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):GASFLOW") {
   field(DESC, "Gas Flow")
   field(DTYP, "Raw Soft Channel")
@@ -93,6 +100,7 @@ record(ai, "$(P)$(Q):GASFLOW") {
   field(EGU, "l/min")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):GASHEAT") {
   field(DESC, "Gas Heater")
   field(DTYP, "Raw Soft Channel")
@@ -100,6 +108,7 @@ record(ai, "$(P)$(Q):GASHEAT") {
   field(EGU, "%")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):EVAPHEAT") {
   field(DESC, "Evap Heater")
   field(DTYP, "Raw Soft Channel")
@@ -107,6 +116,7 @@ record(ai, "$(P)$(Q):EVAPHEAT") {
   field(EGU, "%")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):SUCTHEAT") {
   field(DESC, "Suct Heater")
   field(DTYP, "Raw Soft Channel")
@@ -114,6 +124,7 @@ record(ai, "$(P)$(Q):SUCTHEAT") {
   field(EGU, "%")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),RUNTIME
 record(ai, "$(P)$(Q):RUNTIME") {
   field(DESC, "Pump uptime")
@@ -134,6 +145,7 @@ record(ai, "$(P)$(Q):VER") {
   field(PINI, "YES")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):EVAPADJUST") {
   field(DESC, "Evap Vacuum Compensation")
   field(DTYP, "Raw Soft Channel")
@@ -174,6 +186,7 @@ record(ao, "$(P)$(Q):RAMP") {
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,rw,$(gda_name=),RRATE
 record(ao, "$(P)$(Q):RRATE") {
   field(DESC, "Set Ramp Rate")
@@ -194,6 +207,7 @@ record(ao, "$(P)$(Q):PLAT") {
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,rw,$(gda_name=),PTIME
 record(ao, "$(P)$(Q):PTIME") {
   field(DESC, "Plat Time")
@@ -221,6 +235,7 @@ record(ao, "$(P)$(Q):COOL") {
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,rw,$(gda_name=),CTEMP
 record(ao, "$(P)$(Q):CTEMP") {
   field(DESC, "Cool Temp")
@@ -236,6 +251,7 @@ record(ao, "$(P)$(Q):CTEMP") {
   field(FLNK, "$(P)$(Q):CTEMPCH")
 }
 
+# % archiver 1 Monitor
 record(ao, "$(P)$(Q):ERATE") {
   field(DESC, "Set End Rate")
   field(DTYP, "Raw Soft Channel")
@@ -279,6 +295,7 @@ record(ao, "$(P)$(Q):STOP") {
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
+# % archiver 1 Monitor
 record(bo, "$(P)$(Q):TURBO") {
   field(DTYP, "Raw Soft Channel")
   field(ZNAM, "Off")
@@ -424,6 +441,7 @@ record(ao, "$(P)$(Q):CTEMPH") {
   field(DTYP, "Raw Soft Channel")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):SETPOINT") {
   field(DESC, "Set Point")
   field(DTYP, "Raw Soft Channel")
@@ -435,6 +453,7 @@ record(ai, "$(P)$(Q):SETPOINT") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),TEMP
 record(ai, "$(P)$(Q):TEMP") {
   field(DESC, "Current Temperature")
@@ -447,6 +466,7 @@ record(ai, "$(P)$(Q):TEMP") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):ERROR") {
   field(DESC, "Error")
   field(DTYP, "Raw Soft Channel")
@@ -458,6 +478,7 @@ record(ai, "$(P)$(Q):ERROR") {
   field(EGU, "K")
 }
 
+# % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),ALARM,Alarm Status,<pv>.VALA
 record(genSub, "$(P)$(Q):ALARM") {
   field(DESC, "Alarm Status")
