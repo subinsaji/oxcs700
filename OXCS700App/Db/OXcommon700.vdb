@@ -3,7 +3,7 @@
 #! DBD("../../dbd/OXCS700vdct.dbd")
 #! DBDEND
 
-
+# % macro, DISABLE_COMMS, Optional macro to control whether comms are disabled (1) or not (0) on startup. Defaults to disabled
 
 record(ai, "$(P)$(Q):TYPE") {
   field(DESC, "Status Packet ID")
@@ -499,7 +499,7 @@ record(ai, "$(P)$(Q):ALARMI") {
 record(bo, "$(P)$(Q):DISABLE") {
   field(DESC, "Disable comms")
   field(PINI, "YES")
-  field(VAL, "1")
+  field(VAL,  "$(DISABLE_COMMS=1)")
   field(OMSL, "supervisory")
   field(ZNAM, "Enabled")
   field(ONAM, "Disabled")
