@@ -488,10 +488,14 @@ record(genSub, "$(P)$(Q):ALARM") {
   field(SNAM, "alarmlookupProcess")
 }
 
+# % alh $SEVRCOMMAND UP_ANY dls-alh-handler.py $(P)$(Q):ALARMI
+# % alh $SEVRCOMMAND UP_ANY dls-sendsms-alarm.py $(P)$(Q):ALARMI
 record(ai, "$(P)$(Q):ALARMI") {
   field(DESC, "Alarm number")
   field(DTYP, "Raw Soft Channel")
   field(PINI, "YES")
+  field(HIGH, "1")
+  field(HSV,  "MAJOR")
   field(FLNK, "$(P)$(Q):ALARM")
 }
 
