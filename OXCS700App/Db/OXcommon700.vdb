@@ -296,6 +296,7 @@ record(ao, "$(P)$(Q):STOP") {
 }
 
 # % archiver 1 Monitor
+#% autosave 1 VAL
 record(bo, "$(P)$(Q):TURBO") {
   field(DTYP, "Raw Soft Channel")
   field(ZNAM, "Off")
