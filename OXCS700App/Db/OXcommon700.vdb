@@ -5,9 +5,14 @@
 
 # % macro, DISABLE_COMMS, Optional macro to control whether comms are disabled (1) or not (0) on startup. Defaults to disabled
 
-record(ai, "$(P)$(Q):TYPE") {
-  field(DESC, "Status Packet ID")
+record(mbbi, "$(P)$(Q):TYPE")
+{
+  field(DESC, "Status Packet Type")
   field(DTYP, "Raw Soft Channel")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ONST, "Standard Packets")
+  field(TWST, "Extended Packets")
   field(PINI, "YES")
 }
 
@@ -127,7 +132,7 @@ record(ai, "$(P)$(Q):SUCTHEAT") {
 # % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),RUNTIME
 record(ai, "$(P)$(Q):RUNTIME") {
-  field(DESC, "Pump uptime")
+  field(DESC, "Pump Uptime")
   field(DTYP, "Raw Soft Channel")
   field(PINI, "YES")
   field(EGU, "min")
@@ -149,6 +154,49 @@ record(ai, "$(P)$(Q):VER") {
 record(ai, "$(P)$(Q):EVAPADJUST") {
   field(DESC, "Evap Vacuum Compensation")
   field(DTYP, "Raw Soft Channel")
+  field(PINI, "YES")
+}
+
+# % archiver 1 Monitor
+record(ai, "$(P)$(Q):TURBOMODE") {
+  field(DESC, "Turbo Mode Readback")
+  field(DTYP, "Raw Soft Channel")
+  field(PINI, "YES")
+}
+
+record(mbbiDirect, "$(P)$(Q):HARDWARETYPE") {
+  field(DESC, "Hardware Type")
+  field(DTYP, "Raw Soft Channel")
+  field(NOBT, "3")
+  field(PINI, "YES")
+}
+
+record(bi, "$(P)$(Q):MODEL")
+{
+  field(INP,  "$(P)$(Q):HARDWARETYPE.B0 CP")
+  field(ZNAM, "Cryostream Standard")
+  field(ONAM, "Cryostream Plus")
+}
+
+record(bi, "$(P)$(Q):CRYOSHUTTER")
+{
+  field(INP,  "$(P)$(Q):HARDWARETYPE.B1 CP")
+  field(ZNAM, "without Cryoshutter")
+  field(ONAM, "with Cryoshutter")
+}
+
+record(bi, "$(P)$(Q):SERIES")
+{
+  field(INP,  "$(P)$(Q):HARDWARETYPE.B2 CP")
+  field(ZNAM, "(700 Series)")
+  field(ONAM, "(800 Series)")
+}
+
+# % archiver 1 Monitor
+record(ai, "$(P)$(Q):LEVEL") {
+  field(DESC, "Liquid Nitrogen Level")
+  field(DTYP, "Raw Soft Channel")
+  field(EGU,  "%")
   field(PINI, "YES")
 }
 
@@ -296,7 +344,7 @@ record(ao, "$(P)$(Q):STOP") {
 }
 
 # % archiver 1 Monitor
-#% autosave 1 VAL
+# %autosave 1 VAL
 record(bo, "$(P)$(Q):TURBO") {
   field(DTYP, "Raw Soft Channel")
   field(ZNAM, "Off")
@@ -309,6 +357,17 @@ record(bo, "$(P)$(Q):TURBO") {
 record(ao, "$(P)$(Q):TURBOCMD") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto turbo($(P)$(Q)) $(PORT)")
+  field(SDIS, "$(P)$(Q):DISABLE")
+}
+
+# 0 = Receive Normal status packets
+# 1 = Receive Extended status packets
+record(ao, "$(P)$(Q):SETSTATUSFORMAT") {
+  field(DESC, "Select Normal or Extended status packets")
+  field(DTYP, "stream")
+  field(VAL,  "1")
+  field(OUT,  "@OXCS700.proto setstatusformat($(P)$(Q)) $(PORT)")
+  field(PINI, "YES")
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
