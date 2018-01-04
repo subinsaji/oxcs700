@@ -28,6 +28,15 @@ ReplyTimeout = 2000;
 # 28,29: unsigned short ControllerNumber
 # 30: unsigned char SoftwareVersion
 # 31: unsigned char EvapAdjust
+# 32: unsigned char TurboMode
+# 33: unsigned char HardwareType
+# 34: unsigned char Level (%)
+# 35: unsigned char ShutterTime (unused in module)
+# 36: unsigned char UnusedOne (unused in module)
+# 37: unsigned char UnusedTwo (unused in module)
+# 38,39: unsigned short UnusedThree (unused in module)
+# 39,40: unsigned short UnusedFour (unused in module)
+
 read { in "%0r%(\$1:TYPE.RVAL)0r%(\$1:SETPOINT.RVAL)02r"
           "%(\$1:TEMP.RVAL)02r%(\$1:ERROR.RVAL)2r"
           "%(\$1:RUNMODE.RVAL)0r%(\$1:PHASE.RVAL)0r%(\$1:RAMPRATE.RVAL)02r"
@@ -35,7 +44,9 @@ read { in "%0r%(\$1:TYPE.RVAL)0r%(\$1:SETPOINT.RVAL)02r"
           "%(\$1:SUCTTEMP.RVAL)02r%(\$1:REMAINING.RVAL)02r%(\$1:GASFLOW.RVAL)0r"
           "%(\$1:GASHEAT.RVAL)0r%(\$1:EVAPHEAT.RVAL)0r%(\$1:SUCTHEAT.RVAL)0r"
           "%(\$1:BACKPRESS.RVAL)0r%(\$1:ALARMI.RVAL)0r%(\$1:RUNTIME.RVAL)02r"
-          "%(\$1:CTRLNUM.RVAL)02r%(\$1:VER.RVAL)0r%(\$1:EVAPADJUST.RVAL)0r"; }
+          "%(\$1:CTRLNUM.RVAL)02r%(\$1:VER.RVAL)0r%(\$1:EVAPADJUST.RVAL)0r"
+          "%(\$1:TURBOMODE.RVAL)0r%(\$1:HARDWARETYPE.RVAL)0r%(\$1:LEVEL.RVAL)0r"
+          "%0r%0r%0r%02r%02r"; }
 
 #read { in "%1c%(\$1:TYPE.RVAL)r%(\$1:SETPOINT.RVAL)2r"
 #          "%(\$1:TEMP.RVAL)2r%(\$1:ERROR.RVAL)2r"
@@ -63,6 +74,7 @@ pause   { out "\x02\x11"; }
 resume  { out "\x02\x12"; }
 stop    { out "\x02\x13"; }
 turbo   { out "\x03\x14%(\$1:TURBO.RVAL)r"; }
+setstatusformat   { out "\x03\x28%(\$1:SETSTATUSFORMAT.RVAL)r"; }
 
 
 
