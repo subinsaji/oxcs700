@@ -20,7 +20,7 @@
 # % archiver 1 Monitor
 # %gdatag,mbbinary,ro,$(gda_name=),PHASE
 record(mbbi, "$(P)$(Q):PHASE") {
-  field(DESC, "Phase Id")
+  field(DESC, "Phase ID")
   field(DTYP, "Raw Soft Channel")
   field(PINI, "YES")
   field(ZRVL, "0")
