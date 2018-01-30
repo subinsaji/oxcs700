@@ -224,6 +224,7 @@ record(ao, "$(P)$(Q):RESTART") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto restart($(P)$(Q)) $(PORT)")
   field(SDIS, "$(P)$(Q):DISABLE")
+  field(FLNK, "$(P)$(Q):SETSTATUSFORMAT")
 }
 
 # %gdatag,pv,rw,$(gda_name=),RAMP
