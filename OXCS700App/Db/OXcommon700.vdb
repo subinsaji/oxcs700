@@ -224,7 +224,6 @@ record(ao, "$(P)$(Q):RESTART") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto restart($(P)$(Q)) $(PORT)")
   field(SDIS, "$(P)$(Q):DISABLE")
-  field(FLNK, "$(P)$(Q):SETSTATUSFORMAT")
 }
 
 # %gdatag,pv,rw,$(gda_name=),RAMP
@@ -371,6 +370,16 @@ record(ao, "$(P)$(Q):SETSTATUSFORMAT") {
   field(PINI, "YES")
   field(SDIS, "$(P)$(Q):DISABLE")
 }
+
+record(scalcout, "$(P)$(Q):TRIGGER_SETSTATUSFORMAT") {
+    field(DESC, "Trigger extended status packets when standard status packets on")
+    field(INAA, "$(P)$(Q):TYPE CP")
+    field(CALC, "AA==BB?1:0")
+    field(OOPT, "Transition To Non-zero")
+    field(BB,   "Standard Packets")
+    field(OUT,  "$(P)$(Q):SETSTATUSFORMAT PP")
+}
+    
 
 record(ao, "$(P)$(Q):RTEMPH") {
   field(DESC, "Ramp Target Temp Hi byte")

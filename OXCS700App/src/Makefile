@@ -18,6 +18,7 @@ DBD += OXCS700Support.dbd
 OXCS700vdct_DBD += base.dbd
 OXCS700vdct_DBD += stream.dbd
 OXCS700vdct_DBD += asyn.dbd
+OXCS700vdct_DBD += calcSupport.dbd
 OXCS700vdct_DBD += genSubRecord.dbd
 OXCS700vdct_DBD += alarmlookup.dbd
 
