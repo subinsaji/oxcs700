@@ -375,7 +375,7 @@ record(calcout, "$(P)$(Q):TRIGGER_SETSTATUSFORMAT") {
     field(DESC, "Trigger extended status packets")
     field(INPA, "$(P)$(Q):TYPE.RVAL CP")
     field(CALC, "A==1")
-    field(OOPT, "Transition To Non-zero")
+    field(OOPT, "When Non-zero")
     field(OUT,  "$(P)$(Q):SETSTATUSFORMAT PP")
 }
     
