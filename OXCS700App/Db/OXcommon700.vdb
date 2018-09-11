@@ -371,12 +371,11 @@ record(ao, "$(P)$(Q):SETSTATUSFORMAT") {
   field(SDIS, "$(P)$(Q):DISABLE")
 }
 
-record(scalcout, "$(P)$(Q):TRIGGER_SETSTATUSFORMAT") {
-    field(DESC, "Trigger extended status packets when standard status packets on")
-    field(INAA, "$(P)$(Q):TYPE CP")
-    field(CALC, "AA==BB?1:0")
+record(calcout, "$(P)$(Q):TRIGGER_SETSTATUSFORMAT") {
+    field(DESC, "Trigger extended status packets")
+    field(INPA, "$(P)$(Q):TYPE.RVAL CP")
+    field(CALC, "A==1")
     field(OOPT, "Transition To Non-zero")
-    field(BB,   "Standard Packets")
     field(OUT,  "$(P)$(Q):SETSTATUSFORMAT PP")
 }
     
