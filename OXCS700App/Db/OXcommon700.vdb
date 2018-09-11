@@ -157,11 +157,23 @@ record(ai, "$(P)$(Q):EVAPADJUST") {
   field(PINI, "YES")
 }
 
+# 0 - Off
+# 1 - On
+# 2 - Auto (also called Machine Turbo, appears in Cool mode only)
+# 3 - On (appears in Cool mode only)
 # % archiver 1 Monitor
-record(ai, "$(P)$(Q):TURBOMODE") {
+record(mbbi, "$(P)$(Q):TURBOMODE") {
   field(DESC, "Turbo Mode Readback")
   field(DTYP, "Raw Soft Channel")
   field(PINI, "YES")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "Off")
+  field(ONST, "On")
+  field(TWST, "Auto")
+  field(THST, "On")
 }
 
 record(mbbiDirect, "$(P)$(Q):HARDWARETYPE") {
@@ -347,7 +359,7 @@ record(ao, "$(P)$(Q):STOP") {
 # %autosave 1 VAL
 record(bo, "$(P)$(Q):TURBO") {
   field(DTYP, "Raw Soft Channel")
-  field(ZNAM, "Off")
+  field(ZNAM, "Off/Auto")
   field(ONAM, "On")
   field(FLNK, "$(P)$(Q):TURBOCMD")
   field(RVAL, "0")
@@ -358,6 +370,16 @@ record(ao, "$(P)$(Q):TURBOCMD") {
   field(DTYP, "stream")
   field(OUT, "@OXCS700.proto turbo($(P)$(Q)) $(PORT)")
   field(SDIS, "$(P)$(Q):DISABLE")
+}
+
+# This PV keeps the GUI TURBO dropdown display in sync with the RBV
+# e.g. if the IOC is restarted when the TURBOMODE is On
+# TURBOMODE=1 (On) or 3 (On in Cool mode) means ON
+# TURBOMODE=0 (Off) or 2 (Auto in Cool mode) means Off/Auto
+record(calc, "$(P)$(Q):TURBORBV_SYNC") {
+  field(DESC, "For syncing GUI only")
+  field(INPA, "$(P)$(Q):TURBOMODE CP")
+  field(CALC, "A==1 || A==3")
 }
 
 # 0 = Receive Normal status packets

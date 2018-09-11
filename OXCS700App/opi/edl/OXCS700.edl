@@ -3,9 +3,9 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1652
-y 734
-w 653
+x 664
+y 244
+w 668
 h 765
 font "arial-medium-r-18.0"
 ctlFont "arial-medium-r-18.0"
@@ -1312,7 +1312,7 @@ minor 0
 release 0
 x 495
 y 525
-w 110
+w 95
 h 25
 fgColor index 25
 bgColor index 3
@@ -1320,7 +1320,7 @@ inconsistentColor index 0
 topShadowColor index 1
 botShadowColor index 11
 controlPv "$(CS):TURBO"
-indicatorPv "$(CS):TURBOMODE"
+indicatorPv "$(CS):TURBORBV_SYNC"
 font "arial-bold-r-14.0"
 endObjectProperties
 
@@ -2082,23 +2082,6 @@ objType "monitors"
 noExecuteClipMask
 endObjectProperties
 
-# (Byte)
-object ByteClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 610
-y 525
-w 25
-h 25
-controlPv "$(CS):TURBOMODE"
-lineColor index 14
-onColor index 15
-offColor index 5
-numBits 1
-endObjectProperties
-
 # (Text Monitor)
 object activeXTextDspClass:noedit
 beginObjectProperties
@@ -2215,7 +2198,7 @@ beginObjectProperties
 major 4
 minor 0
 release 0
-x 610
+x 595
 y 657
 w 25
 h 25
@@ -2234,7 +2217,7 @@ minor 0
 release 0
 x 495
 y 658
-w 110
+w 95
 h 25
 fgColor index 25
 bgColor index 3
@@ -2334,5 +2317,30 @@ visMax "1"
 value {
   "Unavailable on 700 Series"
 }
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 6
+release 0
+x 595
+y 525
+w 40
+h 25
+controlPv "$(CS):TURBOMODE"
+font "arial-bold-r-14.0"
+fontAlign "center"
+fgColor index 16
+fgAlarm
+bgColor index 10
+motifWidget
+limitsFromDb
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+noExecuteClipMask
 endObjectProperties
 
