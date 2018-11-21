@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<components arch="linux-x86">
+<components arch="linux-x86_64">
 	<asyn.AsynIP name="OXPH700Asyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
 	<asyn.AsynIP name="OXCS700Asyn" port="172.23.111.180:7001" simulation="localhost:9001"/>
 	<OXCS700.OXPH700 P="TESTOXCS700" PORT="OXCS700Asyn" Q=":OXCS" name="CS"/>
