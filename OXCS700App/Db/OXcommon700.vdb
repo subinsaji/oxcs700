@@ -204,6 +204,8 @@ record(bi, "$(P)$(Q):SERIES")
   field(ONAM, "(800 Series)")
 }
 
+# % alh $SEVRCOMMAND UP_ANY dls-alh-handler.py $(P)$(Q):LEVEL
+# % alh $SEVRCOMMAND UP_ANY dls-sendsms-alarm.py $(P)$(Q):LEVEL
 # % archiver 1 Monitor
 record(ai, "$(P)$(Q):LEVEL") {
   field(DESC, "Liquid Nitrogen Level")
