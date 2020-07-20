@@ -4,7 +4,7 @@ major 4
 minor 0
 release 1
 x 527
-y 79
+y 116
 w 653
 h 765
 font "arial-medium-r-18.0"
@@ -1667,6 +1667,7 @@ controlPv "$(CS):LEVEL"
 font "arial-bold-r-14.0"
 fontAlign "center"
 fgColor index 16
+fgAlarm
 bgColor index 10
 limitsFromDb
 nullColor index 0

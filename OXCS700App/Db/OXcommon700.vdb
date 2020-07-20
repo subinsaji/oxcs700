@@ -211,6 +211,8 @@ record(ai, "$(P)$(Q):LEVEL") {
   field(DESC, "Liquid Nitrogen Level")
   field(DTYP, "Raw Soft Channel")
   field(EGU,  "%")
+  field(LOW,  "15")
+  field(LSV,  "MAJOR")
   field(PINI, "YES")
 }
 
