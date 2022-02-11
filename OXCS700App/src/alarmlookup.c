@@ -75,7 +75,7 @@ static long alarmlookupProcess(genSubRecord *p)
 	{
 		strcpy(p->vala,strArray[lookupval]);
 		if ((lookupval>0)&(lookupval<3)) recGblSetSevr(p,epicsAlarmState,epicsSevMinor);
-		else if (lookupval>4) recGblSetSevr(p,epicsAlarmState,epicsSevMajor);
+		else if (((lookupval>4)&(lookupval<46))|(lookupval>47)) recGblSetSevr(p,epicsAlarmState,epicsSevMajor);
 		else recGblSetSevr(p,epicsAlarmState,epicsSevNone);
 	}
 	else
