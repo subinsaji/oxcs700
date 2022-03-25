@@ -586,6 +586,7 @@ record(genSub, "$(P)$(Q):ALARM") {
   field(SNAM, "alarmlookupProcess")
 }
 
+# % archiver 1 Monitor
 record(ai, "$(P)$(Q):ALARMI") {
   field(DESC, "Alarm number")
   field(DTYP, "Raw Soft Channel")
