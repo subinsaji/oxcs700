@@ -589,12 +589,10 @@ record(ai, "$(P)$(Q):ERROR") {
 
 # % archiver 1 Monitor
 # %gdatag,pv,ro,$(gda_name=),ALARM,Alarm Status,<pv>.VALA
-# % alh $SEVRCOMMAND UP_ANY dls-alh-handler.py $(P)$(Q):ALARM
-# % alh $SEVRCOMMAND UP_ANY dls-sendsms-alarm.py $(P)$(Q):ALARM
 record(genSub, "$(P)$(Q):ALARM") {
   field(DESC, "Alarm Status")
-  field(INPA, "$(P)$(Q):ALARMI")
-  field(FTA, "LONG")
+  field(INPA, "$(P)$(Q):ALARMI CP")
+  field(FTA,  "LONG")
   field(FTVA, "STRING")
   field(BRSV, "MAJOR")
   field(SNAM, "alarmlookupProcess")
@@ -607,7 +605,6 @@ record(ai, "$(P)$(Q):ALARMI") {
   field(PINI, "YES")
   field(HIGH, "1")
   field(HSV,  "MAJOR")
-  field(FLNK, "$(P)$(Q):ALARM")
 }
 
 # % gdatag,binary,rw,$(gda_name=),DISABLE
