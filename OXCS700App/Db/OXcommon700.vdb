@@ -596,6 +596,40 @@ record(genSub, "$(P)$(Q):ALARM") {
   field(FTVA, "STRING")
   field(BRSV, "MAJOR")
   field(SNAM, "alarmlookupProcess")
+  field(FLNK, "$(P)$(Q):COPY_ALARM_FIELDS")
+}
+
+# The description is copied before the severity
+# to ensure that the DESC field is updated before
+# the alarm handler is triggered by the severity
+record(seq, "$(P)$(Q):COPY_ALARM_FIELDS")
+{
+  field(DESC, "Copy the alarm fields")
+  field(DOL1, "1")
+  field(LNK1, "$(P)$(Q):COPY_STRING.PROC CA")
+  field(DOL2, "1")
+  field(LNK2, "$(P)$(Q):COPY_SEVERITY.PROC CA")
+}
+
+record(scalcout, "$(P)$(Q):COPY_STRING") {
+  field(INAA, "$(P)$(Q):ALARM.VALA")
+  field(CALC, "AA")
+  field(OUT,  "$(P)$(Q):ALARM_MSG.DESC PP")
+}
+
+record(calcout, "$(P)$(Q):COPY_SEVERITY") {
+  field(INPA, "$(P)$(Q):ALARM.SEVR")
+  field(CALC, "A")
+  field(OOPT, "Every Time")
+  field(OUT,  "$(P)$(Q):ALARM_MSG PP")
+}
+
+# % alh $SEVRCOMMAND UP_ANY dls-alh-handler.py $(P)$(Q):ALARM_MSG
+# % alh $SEVRCOMMAND UP_ANY dls-sendsms-alarm.py $(P)$(Q):ALARM_MSG
+record(ao, "$(P)$(Q):ALARM_MSG") {
+  field(HIGH, "1.0")
+  field(HSV,  "MAJOR")
+  field(PINI, "YES")
 }
 
 # % archiver 1 Monitor
