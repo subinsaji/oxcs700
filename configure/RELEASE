@@ -13,8 +13,8 @@ SUPPORT=/dls_sw/prod/R3.14.12.7/support
 #WORK=/dls_sw/work/R3.14.12.7/support
 
 # External module definitions (prod release).
-STREAM=	$(SUPPORT)/streamDevice/2-5dls13
-ASYN=   $(SUPPORT)/asyn/4-41
+STREAM=	$(SUPPORT)/streamDevice/2-5dls14
+ASYN=   $(SUPPORT)/asyn/4-41dls2
 GENSUB= $(SUPPORT)/genSub/1-8dls3
 CALC=   $(SUPPORT)/calc/3-7-3
 
