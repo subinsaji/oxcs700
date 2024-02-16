@@ -11,8 +11,8 @@ include $(TOP)/configure/CONFIG
 # In a Diamond Support Module, install
 # templates like this
 #
-DB += OXCS700.template
-DB += OXPH700.template
+# DB += OXCS700.template
+# DB += OXPH700.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------
